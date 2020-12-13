@@ -11,3 +11,210 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+}
+.App {
+  height: 3000000px;
+}
+body {
+  position: fixed;
+}
+
+.modal-open {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: fixed;
+  transition: all 0.2s ease-in;
+  top: 0px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+
+.modal-close {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+.tour-guide {
+  margin: 5px;
+  background-color: #fff;
+  width: 300px;
+  min-height: 100px;
+  left: 0px;
+  top: 0px;
+  opacity: 1;
+  position: absolute;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-sizing: border-box;
+  padding: 24px 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0.5em 3em;
+  line-height: 1.3;
+  color: #2d2323;
+  font-weight: 500;
+}
+.tour-guide button,.tour-guide button:hover, .tour-guide button:active  { 
+  outline: none;
+}
+.tour-content {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  display: grid;
+  grid-template-rows: 80% 60px;
+}
+.tour-content p {
+  margin: 0;
+  text-align: left;
+  padding: 0;
+}
+.tour-data-row {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.tour-elements-feedback {
+  display: flex;
+  justify-content: space-between;
+}
+
+.badge {
+  position: absolute;
+  font-family: monospace;
+  background: linear-gradient(to right, rgb(28, 143, 158), rgb(92, 183, 183));
+  height: 1.875em;
+  line-height: 2;
+  padding-left: 0.8125em;
+  padding-right: 0.8125em;
+  font-size: 1em;
+  border-radius: 1.625em;
+  color: white;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0.25em 0.5em;
+  top: -0.8125em;
+  right: -0.8125em;
+  background-color: linear-gradient(to right, #1c8f9e, #5cb7b7);
+}
+
+.tour-highlight {
+  counter-increment: dot 1;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgb(202, 204, 206);
+  border-radius: 100%;
+  padding: 0px;
+  display: block;
+  margin: 4px;
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  cursor: pointer;
+  transform: scale(1);
+  color: rgb(202, 204, 206);
+  background: none;
+}
+.tour-highlight::before {
+  content: counter(dot);
+  position: absolute;
+  bottom: calc(100% + 0.25em);
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, 1em);
+  transition: all 0.3s ease 0s;
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 9px;
+  height: 9px;
+  color: rgb(94, 94, 94);
+  display: block;
+  padding: 0px;
+  border: 0px;
+  background: none;
+  font-size: 0px;
+  cursor: pointer;
+  font: 400 13.3333px Arial;
+  appearance: button;
+}
+
+.highlight {
+  background: linear-gradient(to right, rgb(28, 143, 158), rgb(92, 183, 183));
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  border-color: rgb(92, 183, 183);
+  cursor: not-allowed;
+  transform: scale(1.25);
+}
+.svg {
+  appearance: button;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+  box-sizing: border-box;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 13.3333px;
+  line-height: normal;
+  font-family: Arial;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  color: rgb(100, 100, 100);
+  width: 16px;
+  height: 12px;
+  flex: 0 0 16px;
+  padding: 0px;
+  border: 0px;
+  background: none;
+  font-size: 0px;
+  cursor: pointer;
+}
+
+.left-svg { 
+  display:flex;
+  justify-content:flex-start;
+}
+
+
+.right-svg { 
+  display:flex;
+  justify-content:flex-end;
+}
+
+.overlay-element {
+  background: #fff!important;
+  z-index: 20;
+  position: relative;
+}

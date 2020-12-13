@@ -1,7 +1,11 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
+body, html, #root {
+  height: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.grid { 
+  display:grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows : 50px 10% 20% 30% 20% 10%;
+}
+
+.row { 
+  display:grid;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.one-row { 
+  width: 100%;
+  height: 100%;
+}
+ h1 { 
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+.two-rows {
+  display:grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 49% 49%;
+  grid-column-gap: 2%;
+}
+.three-rows {
+  display:grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 0.3%;
+}
+.four-rows {
+  display:grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 24% 24% 24% 25%;
+  grid-column-gap: 1%;
+}
+
+.item { 
+  width: 100%;
+  background: rgba(0,0,0,0.04);
 }
